@@ -1,0 +1,1866 @@
+<style>
+   
+    @media screen and (max-width: 768px) {
+  /* Increase font size for smaller screens */
+  body {
+    font-size: 16px;
+  }
+}
+      
+        #editableSpan {
+      display: inline-block;
+      border: none;
+      padding: 5%;
+      font-family: Arial, sans-serif;
+      font-size: 22px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      background-color: #fff;
+      outline: none;
+      width: 90%;
+      height: 80%;
+   margin-bottom:3%;
+    }
+    
+    .buttonx {
+      background-color: white;
+      border: 1px solid #000;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      outline: none;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      opacity:0.8;
+    }
+       
+    #menu {
+      display: none;
+      position: absolute; 
+    }
+    
+    #menumobile {
+      display:none;
+      position:fixed;
+      right:0;
+      top:30%;
+    }
+
+
+ #sidemenu {
+   display:none;
+      position: fixed;
+      top: 45%;
+      right: -10;
+      height: 10%;
+      width: calc((9 / 21) * (10% * 100vh));
+      opacity: 0.3;
+      transition: opacity 0.5s ease;
+    }
+   
+   
+
+
+    h1 {
+      font-size: 15px;
+    }
+
+    #translatex, defination, #science, #calxv {
+      border: none;
+      outline: none;
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+      width: 90%;
+      padding: 2%;
+    }
+
+    #selectedword, #act, #prenotepad {
+      display: none;
+    }
+
+    .block {
+      width: 20%;
+      height: 3%;
+      border: none;
+      background-color: #04AA6D;
+      color: white;
+      padding: 1%;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .block:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #sp {
+      border: 1px solid #000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      width: 50%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      overflow: auto;
+      height:99%;
+    }
+
+    .imageContainer {
+      display: flex;
+      gap: 10px;
+    }
+
+    .question-mark {
+      display: inline-block;
+      animation: rotate 2s infinite linear;
+      font-size: 200px;
+      position: fixed;
+      top: 40%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+    }
+    
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    #save {
+      border: 1px solid #000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      width: 40%;
+      top: 0;
+      left: 0;
+      overflow: auto;
+      height:99%;
+      position:fixed;
+      
+    }
+
+    .input-box {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 80%;
+     
+    }
+
+    .input-box2 {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 60%;
+     
+    }
+
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      width: 70%;
+    }
+
+    .a {
+      background-color: green;
+      color: #fff;
+    }
+
+    .b {
+      background-color: blue;
+      color: #fff;
+    }
+    
+    .c {
+      background-color: #e74c3c;
+      color: #fff;
+    }
+
+    .btn:hover {
+      opacity: 0.7;
+    }
+
+    .copy-button {
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    
+    
+    .subham {
+      
+      text-align:center;
+      width:100%;
+      
+      
+    }
+    
+    .heading{
+    position:fixed;
+      top: 20;
+      left:0;
+      text-align:center;
+      width:100%;
+      font-size:40px;
+      
+    }
+    
+    .stylish-text {
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+    
+    
+
+      #lekh {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+  z-index: 9999;
+ 
+}
+
+  #prog-open {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: white;
+  z-index: 9999;
+ 
+}
+
+#prog-auth {
+  position: fixed;
+  bottom: 3%; /* Adjust the distance from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px; /* Increase font size for better visibility */
+  color: white;
+  z-index: 99999;
+}
+
+
+
+
+
+
+
+.ini-out {
+position:fixed;
+left:0;
+top:0;
+right:0;
+bottom:0;
+height:100%;
+widt:100%;
+animation: inix1 2s ease-in-out forwards;
+}
+
+@keyframes inix1 {
+ 
+  
+  0% {
+    opacity: 1;
+    background-color: black;
+   display:block;
+   
+  }
+   
+  
+  100% {
+    opacity: 0;
+    background-color: transparent;
+   display:none;
+  }
+}
+   
+   
+   .ini-hold {
+position:fixed;
+left:0;
+top:0;
+right:0;
+bottom:0;
+height:100%;
+width:100%;
+background-color: black;
+   display:block;
+}
+
+
+   
+   #loading{
+position:fixed;
+left:45%;
+bottom:10%;
+widt:100%;
+text-align:center;
+color:white;
+display:none;
+   }
+ 
+
+.post-title.entry-title {
+  color:Black;
+   box-shadow:0 20px 50px grey;
+   text-align:center;
+   padding:1%;
+}
+
+
+#Blog1 {
+   
+   padding:3%;
+
+}
+
+.comments, .blog-feeds, .post-footer, #blog-pager , .post-feeds {
+  display: none;
+}
+   
+      #console-card {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #0078d4;
+            color: #fff;
+            border: 1px solid #005a9e;
+            padding: 10px;
+            max-width: 30%;
+            overflow: auto;
+            max-height: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.5s;
+            opacity: 0;
+   font-size:10px;
+        }
+
+   .custom-div:hover{
+    background-color: white;
+            color: blue;
+   }
+ 
+    
+  </style>
+  
+  
+  <body>
+
+   
+    <span id="editableSpan" class="main" contenteditable="true" onclick="mainp()" oninput="updateLocalStorage()"><br></span>
+
+
+   
+
+<div id="menu">
+    <button class="buttonx" onclick="applyFormatting('red', 'bold', 'Comic Sans MS', '60px')" style="background-color: red;"></button>
+    <button class="buttonx" onclick="applyFormatting('green', 'bold', 'Georgia', '45px')" style="background-color: green;"></button>
+    <button class="buttonx" onclick="applyFormatting('blue', 'bold','Calibri', '35px')" style="background-color: blue;"></button>
+    <br>
+    <button class="buttonx" onclick="applyFormatting('black', 'normal', 'Arial', '22px')" style="background-color: black;"></button>
+    <button class="buttonx" onclick="applyBackgroundColor('yellow')" style="background-color: yellow;"></button>
+    <button class="buttonx" onclick="applyFormatting('black', 'bold', 'Arial', '30px', 'underline')" style="background-color: brown;"></button>
+    <br>
+    <button class="buttonx" onclick="analy()" style="background-color: white; border: 1px solid #ccc;width:47px;"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="14" cy="11" r="8"></circle>
+        <line x1="24" y1="21" x2="19.65" y2="16.65"></line>
+    </svg></button>
+    <button class="buttonx" onclick="sidep2()" style="background-color: white;border: 1px solid #ccc;width:47px;"><svg>
+        <circle cx="5" cy="6" r="1"></circle>
+        <line x1="7" y1="6" x2="30" y2="6" stroke="black"></line>
+        <circle cx="5" cy="13" r="1"></circle>
+        <line x1="7" y1="13" x2="30" y2="13" stroke="black"></line>
+        <circle cx="5" cy="20" r="1"></circle>
+        <line x1="7" y1="20" x2="30" y2="20" stroke="black"></line>
+    </svg></button>
+</div>
+
+
+
+<div id="menumobile">
+    <button class="buttonx" onclick="applyFormatting('red', 'bold', 'Comic Sans MS', '60px')" style="background-color: red;"></button><br>
+    <button class="buttonx" onclick="applyFormatting('green', 'bold', 'Georgia', '45px')" style="background-color: green;"></button><br>
+    <button class="buttonx" onclick="applyFormatting('blue', 'bold','Calibri', '35px')" style="background-color: blue;"></button>
+    <br>
+    <button class="buttonx" onclick="applyFormatting('black', 'normal', 'Arial', '22px')" style="background-color: black;"></button><br>
+    <button class="buttonx" onclick="applyBackgroundColor('yellow')" style="background-color: yellow;"></button><br>
+    <button class="buttonx" onclick="applyFormatting('black', 'bold', 'Arial', '30px', 'underline')" style="background-color: brown;"></button>
+    <br>
+    <button class="buttonx" onclick="analy()" style="background-color: white; border: 1px solid #ccc;">?</button><br>
+    <button class="buttonx" onclick="sidep2()" style="background-color: white;border: 1px solid #ccc;">=</button>
+</div>
+
+  
+  <button id="sidemenu" onclick="sidemenuopen()">←</button>
+  
+  
+
+  
+<input id="xx" value="sx" style="display:none;">
+
+
+<table>
+<tbody><tr>
+
+<th id="sp" style="display:none;">
+
+<center>
+<span id="wait" class="question-mark">?</span>
+
+
+<input id="selectedword"><br>
+<br>
+
+<div id="bx">
+<p id="translatex"></p>
+</div>
+
+<div id="dx">
+<p id="defination"></p>
+</div>
+
+
+
+<div id="cx">
+<h1>value</h1>
+<textarea id="calxv"></textarea>
+</div>
+
+<div id="imgx"> 
+
+  <textarea id="inputTextArea" style="display:none"></textarea>
+  <textarea id="outputTextArea" style="display:none"></textarea>
+  <div id="imageContainer" class="image-container"></div>
+  <br>
+</div>
+
+<div id="wx">
+<hr id="sep">
+<p id="science"></p>
+</div>
+
+
+<input id="act">
+
+
+
+</center></th>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+
+
+
+
+ <div id="save" style="display:none">
+ <center>
+ 
+ <span class="heading">লেখনীয়া</span>
+
+<div style="height:20vh;"></div>
+
+    <input type="text" class="input-box" id="name" placeholder="File Name"> <br><br>
+    
+      <input type="text" class="input-box" id="who" disabled="true" style="height:3%;display:none;"> <br><br>
+    
+    <button id="create" class="btn a">New</button><br><br>
+    
+    <button class="btn b" id="offline" onclick="offline()">Device</button><br><br>
+    
+    <button class="btn c" id="online" onclick="online()">Server</button><br><br>
+   
+    <button class="btn c" id="onlineedit" onclick="onlineedit()">Server (Editable)</button><br><br>
+    
+    <input type="text" class="input-box2" id="shareurl" placeholder="File Url">
+    <button class="copy-button" onclick="copyToClipboard()">Copy</button><br>
+    </center>
+ 
+    
+    <p id="res" style="border:none;height:auto;width:94%;overflow:auto;background-color:#f2f2f2;box-shadow:0 0 1000px #f2f2f2;padding:3%;">
+    <div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">1. B</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">2. FILE_from_firebase_server</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">3. HOUSE</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">4. Home_3d</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">5. Train</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">6. Whatsapp_mesage_list</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">7. audio_pitch</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">8. effect_audio</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">9. ext_assignment</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">10. firebase_download_draft</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">11. hanif</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">12. neetprep_sidebar</div><div class="custom-div" style="cursor: pointer; height: 5%; border: 1px solid rgb(204, 204, 204); box-shadow: rgb(136, 136, 136) 2px 2px 3px; padding: 2%; background-color: rgb(235, 235, 235);">13. web_piano</div></p><br>
+   <center>
+    <span class="subham">Programmed by Subham Mandal</span>
+    </center>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="ini-out" id="ini" style="display: none;">
+<div id="lekh">লেখনীয়া</div> 
+<progress id="prog-open">
+<div id="prog-auth">progarammed by Subham Mandal</div>
+<div id="mask"></div>
+</progress></div>
+  
+ 
+ <div style="display:none">
+  <textarea id="offlineprep" style="dispay:none"></textarea>
+  <textarea id="targetTextarea" style="display:none"></textarea>
+  <textarea id="newText" style="display:none"></textarea>
+  <input id="localnev" style="display:none" value="lekhoniya-local">
+  <input id="usercheck" style="display:none">
+  <input id="datanode" style="display:none">
+  <input id="localaddress" style="display:none" value="lekhoniya">
+  </div>
+  
+  
+  
+  
+   <form method="post" autocomplete="off" name="google-sheet" style="display:none;">
+  <input id="timestamp" name="timestamp">
+  <input id="backupurl" name="url">
+  <input id="backupdata" name="data">
+   <input id="backupdatax">
+</form>
+
+<div id="console-card" style="opacity: 0;"></div>
+ <input type="hidden" value="" id="usermain" style="display: none;">
+
+
+
+   
+<script>
+
+   
+const consoleLog = console.log; 
+const card = document.getElementById("console-card");
+let hideTimeout = null; 
+console.log = function () {
+    for (let i = 0; i < arguments.length; i++) {
+        const message = arguments[i];
+        const p = document.createElement('p');
+        p.textContent = message;
+        card.appendChild(p);
+    }
+
+    consoleLog.apply(console, arguments);
+    card.style.opacity = 1;
+
+    if (hideTimeout) {
+        clearTimeout(hideTimeout);
+    }
+                                         
+    hideTimeout = setTimeout(() => {
+        card.style.opacity = 0; // Hide the card
+        setTimeout(() => {
+            card.innerHTML = ''; 
+        }, 300); 
+    }, 5000); 
+};
+   
+   
+var selectedRange;
+
+function applyFormatting(color, fontWeight, fontFamily, fontSize, textDecoration) {
+    saveSelection();
+    var span = document.querySelector('.main');
+    var newNode = document.createElement('span');
+    newNode.style.color = color;
+    newNode.style.fontWeight = fontWeight;
+    newNode.style.fontFamily = fontFamily;
+    newNode.style.fontSize = fontSize;
+    newNode.style.textDecoration = textDecoration;
+
+    if (selectedRange.toString().length > 0) {
+        newNode.appendChild(selectedRange.extractContents());
+        selectedRange.insertNode(newNode);
+    } else {
+        newNode.innerHTML = '&#8203;'; 
+        selectedRange.insertNode(newNode);
+        selectedRange.setStartAfter(newNode);
+        selectedRange.setEndAfter(newNode);
+        restoreSelection();
+    }
+}
+
+
+function applyBackgroundColor(color) {
+    saveSelection();
+    var span = document.querySelector('.main');
+    var newNode = document.createElement('span');
+    newNode.style.backgroundColor = color;
+
+    if (selectedRange.toString().length > 0) {
+        newNode.appendChild(selectedRange.extractContents());
+        selectedRange.insertNode(newNode);
+    } else {
+        newNode.innerHTML = '&#8203;';
+        selectedRange.insertNode(newNode);
+        selectedRange.setStartAfter(newNode);
+        selectedRange.setEndAfter(newNode);
+        restoreSelection();
+    }
+}
+
+function saveSelection() {
+    var selection = window.getSelection();
+    selectedRange = selection.getRangeAt(0);
+}
+
+function restoreSelection() {
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(selectedRange);
+}
+
+
+document.getElementById("editableSpan").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        applyFormatting('black', 'normal', 'Arial', '22px');
+        var newLine = document.createElement('br');
+        var span = document.querySelector('.main');
+        span.appendChild(newLine);
+    }
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+ <script>
+  document.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+
+  let menu = document.getElementById("menu");
+  menu.style.display = "block";
+  
+  // Calculate the adjusted position accounting for scroll
+  let scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+  let scrollY = window.pageYOffset || document.documentElement.scrollTop;
+  var posX = event.clientX + scrollX;
+  var posY = event.clientY + scrollY;
+  
+  menu.style.left = posX + "px";
+  menu.style.top = posY + "px";
+});
+
+document.addEventListener("click", function (event) {
+  var menu = document.getElementById("menu");
+  menu.style.display = "none";
+});
+
+
+
+   
+
+function sidemenuopen() {
+ document.getElementById("menumobile").style.display='block';
+  document.getElementById("sidemenu").style.display='none';
+  
+   setTimeout(function() {
+    document.getElementById("menumobile").style.display = "none";
+    document.getElementById("sidemenu").style.display='block';
+  }, 3000);
+  
+}
+  
+
+
+  
+  </script>
+
+
+  
+  
+  
+  
+
+<script>
+
+
+function analy(){
+ 
+ getWordData();
+ sidep();
+ doGet();
+ goScience();
+ calx();
+ viewslide();
+ 
+ document.getElementById("bx").style.display = "none";
+ document.getElementById("dx").style.display = "none";
+ document.getElementById("cx").style.display = "none";
+ document.getElementById("wx").style.display = "none";
+  document.getElementById("sep").style.display = "none";
+   
+ document.getElementById("imageContainer").style.display = "none";
+ document.getElementById("wait").style.display = "block";
+ 
+ 
+}
+
+function getWordData() {
+  document.getElementById("selectedword").value = window.getSelection();
+  let wordValue = window.getSelection();
+
+  fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordValue}`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("defination").value = data[0].word + " : " + data[0].meanings[0].definitions[0].definition;
+      doGet1();
+      document.getElementById("dx").style.display = "block";
+      
+ document.getElementById("wait").style.display = "none";
+ 
+    })
+    .catch(err => {
+      console.log(err);
+      document.getElementById("dx").style.display = "none"; // Hide the "dx" element on error
+    });
+}
+
+
+function sidep(){
+document.getElementById("sp").style.display="block";
+}
+
+function sidep2(){
+document.getElementById("save").style.display="block";
+}
+
+function mainp(){
+document.getElementById("sp").style.display="none";
+document.getElementById("save").style.display="none";
+}
+
+
+
+function doGet() {
+  var sourceText =   document.getElementById("selectedword").value;   
+  var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=bn&dt=t&q=" + encodeURI(sourceText);
+  
+  
+  
+  
+
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+
+  request.onload = () => {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      let data = JSON.parse(request.responseText);
+      let finaltext = '';
+      for (let i = 0; i < data[0].length; i++) {
+        finaltext += data[0][i][0];
+      }
+    document.getElementById("translatex").innerHTML = sourceText + '<br>' +" ( "+ finaltext +" ) ";
+    document.getElementById("bx").style.display = "block";
+        document.getElementById("wait").style.display = "none";
+    }
+  };
+  request.send();
+}
+
+function doGet1() {
+  var sourceText1 =   document.getElementById("defination").value;   
+ var url1 = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=bn&dt=t&q=" + encodeURI(sourceText1);
+  
+  
+
+  var request1 = new XMLHttpRequest();
+  request1.open('GET', url1, true);
+
+  request1.onload = () => {
+    if (request1.status >= 200 && request1.status < 400) {
+      // Success!
+      let data = JSON.parse(request1.responseText);
+      let finaltext1 = '';
+      for (let i = 0; i < data[0].length; i++) {
+        finaltext1 += data[0][i][0];
+      }
+      let pred=document.getElementById("defination").value;
+       document.getElementById("defination").innerHTML = pred + '<br><br>' + finaltext1; 
+        document.getElementById("wait").style.display = "none";
+    }
+  };
+  request1.send();
+}
+  
+ function calx() {
+  let c1 = document.getElementById("selectedword").value;
+  let c2 = c1.replace(/\+/g, '%2B');
+  let cx = c2.replace(/\//g, '%2F');
+
+  let calurl = "https://api.mathjs.org/v4/?expr=" + cx;
+
+  fetch(calurl)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("calxv").value = c1 + ' = ' + data;
+      document.getElementById("cx").style.display = "block"; document.getElementById("wait").style.display = "none";
+    })
+    .catch(err => {
+      console.log(err);
+      document.getElementById("cx").style.display = "none"; // Hide the "cx" element on error
+    });
+}
+
+  
+
+
+        </script>
+        
+        
+        
+  
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+function goScience() {
+    let searchTerm = $('#selectedword').val();
+
+    $.ajax({
+        url: 'https://en.wikipedia.org/w/api.php',
+        data: {
+            action: 'query',
+            format: 'json',
+            prop: 'extracts',
+            exintro: '',
+            titles: searchTerm
+        },
+        dataType: 'jsonp',
+        beforeSend: function() {
+            // Hide 'wx' and show 'wait' before making the AJAX request
+            $('#wx').hide();
+            $('#wait').show();
+        },
+        success: function(data) {
+            $('#wait').hide();
+
+            var pages = data.query.pages;
+            var pageId = Object.keys(pages)[0];
+            var extractHtml = pages[pageId].extract;
+
+            // Extract plain text from HTML response
+            var extract = $('<div>').html(extractHtml).text();
+
+            // Display results
+            $('#science').html(extract);
+            $('#wx').show();
+        },
+        error: function(error) {
+            console.log(error);
+            $('#wx').hide();
+            $('#wait').hide();
+        }
+    });
+}
+
+
+
+</script>
+
+
+<script>
+
+
+function viewslide(){
+
+
+let inputlink= document.getElementById("selectedword").value;
+
+let inputlinkx=inputlink.trim().replace(/\s+/g, '-');
+
+var mainlink="https://api.codetabs.com/v1/proxy?quest=https://www.google.com/search?q="+inputlinkx+'-images';
+fetch(mainlink)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        return;
+      }
+
+      response.text().then(function(data) {
+        
+         document.getElementById("inputTextArea").value=data;
+          document.getElementById("wait").style.display = "none";
+          checkImagePresence();
+         extractURLs();
+         displayImages();
+         
+
+});
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+   
+}
+
+</script>
+
+
+
+
+
+
+  
+  
+  <script>
+function extractURLs() {
+  var htmlText = document.getElementById("inputTextArea").value;
+  var pattern = /data:image\/jpeg;base64[^;']*';/g;
+  var matches = htmlText.match(pattern);
+  var uniqueURLs = eliminateDuplicates(matches);
+  var urls = uniqueURLs.join("\n\n");
+  document.getElementById("outputTextArea").value = urls.replace(/';/g, '').replace(/\\x3d/g, ' ');
+  
+
+
+
+}
+
+
+    function eliminateDuplicates(urls) {
+      var uniqueURLs = [];
+      for (var i = 0; i < urls.length; i++) {
+        if (!uniqueURLs.includes(urls[i])) {
+          uniqueURLs.push(urls[i]);
+        }
+      }
+      return uniqueURLs;
+      
+      }
+      
+      
+function checkImagePresence() {
+  let inputText = document.getElementById("inputTextArea").value;
+  let imageContainer = document.getElementById("imageContainer");
+
+  if (inputText.includes("data:image/jpeg;base64")) {
+    document.getElementById("sep").style.display = "block";
+    imageContainer.style.display = "block";
+  } else {
+    imageContainer.style.display = "none";
+  }
+}
+
+
+    
+  </script>
+
+<script>
+  function displayImages() {
+
+    var imageUrls = document.getElementById("outputTextArea").value.split("\n");
+    var imageContainer = document.getElementById("imageContainer");
+
+
+    // Clear existing images
+    imageContainer.innerHTML = "";
+
+    // Generate img tags for each URL
+    for (var i = 0; i < imageUrls.length; i++) {
+      var imageUrl = imageUrls[i].trim();
+      if (imageUrl !== "") {
+        var img = document.createElement("img");
+        img.src = imageUrl;
+        imageContainer.appendChild(img);
+      }
+    }
+  }
+</script>
+
+
+
+
+
+  <script>
+    function saveToLocalStorage() {
+    
+    let localaddress = document.getElementById('localaddress').value;
+      var spanContent = document.getElementById('editableSpan').innerHTML;
+      localStorage.setItem(localaddress, spanContent);
+    }
+
+    function loadFromLocalStorage() {
+  
+   setTimeout(authority,500);
+      var spanContent = localStorage.getItem('lekhoniya');
+      if (spanContent) {
+        document.getElementById('editableSpan').innerHTML = spanContent;
+   
+      }
+    }
+
+
+
+    function updateLocalStorage() {
+      saveToLocalStorage();
+    }
+
+ 
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+setInterval(copyToTextarea);
+  function copyToTextarea() {
+    
+    let sourceContent = document.getElementById("editableSpan").outerHTML;
+    
+    document.getElementById("newText").value=sourceContent;
+    
+   
+  }
+</script>
+
+
+
+
+<script>
+  function offline() {
+   
+    let content = document.getElementById("editableSpan").outerHTML;
+    
+     let name = document.getElementById("name").value;
+
+  
+    let blob = new Blob([content], { type: "text/html" });
+
+    
+    let url = URL.createObjectURL(blob);
+
+   
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = name+".html";
+
+   
+    document.body.appendChild(link);
+    link.click();
+
+
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+    
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script>
+
+      var firebaseConfig = {
+  apiKey: "AIzaSyDEhgVwwkCTst0V1DOZUKvtjaXBppuMI3M",
+  authDomain: "onerealtimeserver.firebaseapp.com",
+  databaseURL: "https://onerealtimeserver-default-rtdb.firebaseio.com",
+  projectId: "onerealtimeserver",
+  storageBucket: "onerealtimeserver.appspot.com",
+  messagingSenderId: "263064716551",
+  appId: "1:263064716551:web:b5154b93c62545dfaa71a2",
+  measurementId: "G-90P78SK0Q0"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+
+
+
+     
+    
+
+     
+    </script>
+    
+    <script>
+    
+    function online() {
+ 
+   document.getElementById("online").innerHTML="Uploading...";
+   
+  let newText = document.getElementById("newText").value;
+  
+   console.log('newText : '+newText);
+   
+   
+   let datanode = document.getElementById("datanode").value;
+
+   console.log('datanode : '+datanode);
+   
+   
+  const data = {};
+   data[datanode] = newText+"<input id='usermain' style='display:none' value='"+localStorage.getItem('lekhoniya-user') +"'/>   <input id='canedit' style='display:none' value='noedit'>" ;
+
+   console.log('uploading : '+data[datanode]);
+   
+
+    document.getElementById("backupdatax").value =  newText+"<input id='usermain' style='display:none' value='"+localStorage.getItem('lekhoniya-user') +"'/>   <input id='canedit' style='display:none' value='noedit'>" ;
+   
+  
+   
+  firebase
+    .database()
+    .ref('lekhoniya')
+    .update(data)
+    .then(() => {
+    
+      const key = Object.keys(data)[0];
+      document.getElementById("shareurl").value = 'https://lekhoniya.blogspot.com/' + key+'/';
+   backupload();
+   document.getElementById("online").innerHTML="Creating Backup...";
+    })
+    .catch((error) => {
+      alert('Error updating data: ' + error.message);
+    });
+   
+  
+}
+   
+  
+   
+   
+       function onlineedit() {
+   
+   document.getElementById("onlineedit").innerHTML="Uploading...";
+ 
+  let newText = document.getElementById("newText").value;
+  
+   let datanode = document.getElementById("datanode").value;
+
+  const data = {};
+  data[datanode] = newText+"<input id='usermain' style='display:none' value='"+localStorage.getItem('lekhoniya-user') +"'/>   <input id='canedit' style='display:none' value='yesedit'>" ;
+
+
+ document.getElementById("backupdatax").value =  newText+"<input id='usermain' style='display:none' value='"+localStorage.getItem('lekhoniya-user') +"'/>   <input id='canedit' style='display:none' value='yesedit'>" ;
+
+   
+   
+  firebase
+    .database()
+    .ref('lekhoniya')
+    .update(data)
+    .then(() => {
+    
+      const key = Object.keys(data)[0];
+      document.getElementById("shareurl").value = 'https://lekhoniya.blogspot.com/' + key+'/';
+   backupload();
+   document.getElementById("onlineedit").innerHTML="Creating Backup...";
+    })
+    .catch((error) => {
+      alert('Error updating data: ' + error.message);
+    });
+   
+   
+}
+
+
+ function copyToClipboard() {
+        const shareUrl = document.getElementById("shareurl");
+        shareUrl.select();
+        shareUrl.setSelectionRange(0, 99999); 
+
+        document.execCommand("copy");
+
+      }
+    
+    </script>
+    
+ 
+  
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   
+    <script>
+   
+   
+    function backupload() {
+   
+    let timestamp = new Date().toLocaleTimeString() + ' | ' + new Date().getDate() + '-' + ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date().getMonth()] + '-' + new Date().getFullYear();
+    
+    let backupurl = document.getElementById("shareurl").value;
+   
+   
+    let backupdata = document.getElementById("backupdatax").value;
+   
+    document.getElementById('timestamp').value = timestamp;
+    document.getElementById('backupurl').value = backupurl;
+    document.getElementById('backupdata').value = backupdata;
+
+    backupsheet();
+  }
+   
+   
+    function backupsheet() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyJfX6ypCWnHy5iX6VuJP9yonTmhlbbvwGUxVlozaXvD-k2m6vAbsQZ8-XAPvIvs4cB/exec';
+    const form = document.forms['google-sheet'];
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        if (response.ok) {
+    document.getElementById("online").innerHTML="Server";
+   document.getElementById("onlineedit").innerHTML="Server (Editable)";
+   
+        } else {
+          alert('Backup failed. Please try again.');
+        }
+      })
+      .catch(error => {
+        alert('An error occurred during backup. Please try again later.');
+        console.error('Error:', error);
+      });
+  }
+   
+   
+
+   
+    </script>
+   
+ <script>
+checkURLDigits();
+  function checkURLDigits() {
+    var currentURL = window.location.href;
+    var digitRegex = /\d/g;
+    var digitsCount = (currentURL.match(digitRegex) || []).length;
+
+    if (digitsCount > 7) {
+      document.getElementById('ini').className = 'ini-hold';
+      document.getElementById('prog-open').style.display='block';
+      var startIndex = currentURL.indexOf('com/') + 4; // Adding 4 to exclude 'com/'
+      var endIndex = currentURL.indexOf('/', startIndex);
+      var extractedText = currentURL.substring(startIndex, endIndex);
+      document.getElementById('name').value = extractedText;
+      document.getElementById('localaddress').value = 'view';
+      document.getElementById("datanode").value = extractedText;
+
+      let userName = document.getElementById('usercheck').value;
+      document.getElementById('who').value = 'Author : ' + userName;
+console.log(extractedText);
+      fetch("https://onerealtimeserver-default-rtdb.firebaseio.com/lekhoniya/" + extractedText + ".json")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('ini').className = 'ini-out';
+         
+          let lastIndex = data.lastIndexOf("</span>");
+          let modifiedData = data.slice(0, lastIndex) + data.slice(lastIndex + "</span>".length);
+          let modifiedText = modifiedData.substring(109);
+   console.log('Size: ' + (modifiedText.length * 0.0001).toFixed(2) + 'kb');
+
+          document.getElementById('editableSpan').innerHTML = modifiedText;
+ 
+          checkLocalStorage();
+          authority();
+   
+
+
+          let analyUserCheck = localStorage.getItem('lekhoniya-user');
+
+          let analytics =
+            window.location.href.replace('https://lekhoniya.blogspot.com/', '') +
+            ' | ' + new Date().toLocaleTimeString() +
+            ' | ' + new Date().toDateString() +
+            ' | ' + analyUserCheck;
+
+          if (analyUserCheck === 'DELL-SUBHAM') {
+            // Code to execute if the condition is true
+          } else {
+            // Assuming Firebase is properly configured and initialized
+            firebase.database().ref('lekhoniya_analytics').push(analytics);
+          }
+
+          setTimeout(() => {
+            let userName = document.getElementById('usermain').value;
+            document.getElementById('who').value = 'Author: ' + userName;
+ console.log('Author: ' + userName);
+            let canedit = document.getElementById('canedit').value;
+            if (canedit == 'yesedit') {
+   console.log('Edit : Allow');
+              document.getElementById('onlineedit').style.display = 'none';
+              document.getElementById('online').innerHTML = 'Update';
+            }
+            if (canedit == 'noedit') {
+   console.log('Edit : Deny');
+              document.getElementById('onlineedit').style.display = 'none';
+              document.getElementById('online').style.display = 'none';
+            }
+
+          }, 1000);
+        })
+        .catch(error => {
+          // Handle any errors that occurred during the fetch request
+          console.log("Error:", error);
+        });
+    } else{
+     console.log('local');
+      document.getElementById('ini').className = 'ini-out';
+      setTimeout(loadFromLocalStorage, 100);
+      document.getElementById('localaddress').value = 'lekhoniya';
+      var hiddenInput = document.createElement("input");
+      hiddenInput.type = "hidden";
+      hiddenInput.value = "";
+      hiddenInput.id = "usermain";
+      hiddenInput.style.display = "none";
+      document.body.appendChild(hiddenInput);
+
+   setInterval(function () {
+
+   let name = document.getElementById("name").value.replace(/\s+/g, '_');
+   document.getElementById("datanode").value = name + '-' + Date.now();
+
+}, 1000);
+
+    }
+  }
+   
+</script><input type="hidden" value="" id="usermain" style="display: none;">
+
+
+
+
+<script>
+        
+        function authority(){
+   
+         let usermain=document.getElementById('usermain').value;
+            let usercheck=document.getElementById('usercheck').value;
+     
+   
+            if(usermain==usercheck){
+  
+            document.getElementById('online').innerHTML='Update';
+            }        
+             else{
+            document.getElementById('online').innerHTML='Server';
+            }
+   
+
+        }
+        
+        function checkLocalStorage() {
+   ini();
+            let userName = localStorage.getItem('lekhoniya-user');
+   console.log('User : ' + userName);
+            if (userName==null) {
+              newUser();      
+            } else {
+                document.getElementById('usercheck').value = userName;
+  
+   				
+            }
+            
+           authority();
+        }
+
+ 
+
+        function newUser() {
+           
+   const firstParenthesesMatch = navigator.userAgent.match(/\((.*?)\)/);
+const did = firstParenthesesMatch[1].replace(/ /g, "").replace(/;/g, "-");
+   
+            let userName = Date.now()+'-'+did;
+            localStorage.setItem('lekhoniya-user', userName);
+            document.getElementById('usercheck').value = userName;
+            checkLocalStorage();
+           firebase.database().ref("lekhoniya_user").push(userName);
+    document.getElementById('who').value='Author : '+userName;
+        }
+
+        window.onload = checkLocalStorage;
+        
+    </script>
+    
+    
+    
+<script>
+  document.getElementById("create").addEventListener("click", function() {
+    window.open("https://lekhoniya.blogspot.com/", "_blank");
+    window.close();
+  });
+
+   
+  
+function ini() {
+document.getElementById('ini').style.display = 'block';
+setTimeout(function() {document.getElementById('ini').style.display = 'none';}, 2000);  
+}
+    </script>
+    
+
+
+
+
+
+<script>
+ setTimeout(function () {
+  let databaseRef = firebase.database().ref("lekhoniya");
+  databaseRef.once("value").then(function (snapshot) {
+    var keyNames = Object.keys(snapshot.val());
+    keyNames.forEach(function (key, index) {
+      var div = document.createElement("div");
+      div.textContent = (index + 1) + '. ' + key.replace(/\-\d{10,}$/g, '')  ; // Add numbering
+      div.style.cursor = "pointer";
+      div.style.height = '5%';
+   div.style.border='1px solid #ccc';
+   div.style.boxShadow='2px 2px 3px #888888'; 
+      div.style.padding = '2%';
+      div.style.backgroundColor = '#ebebeb';
+      div.addEventListener("click", function () {
+        window.location.href = "https://lekhoniya.blogspot.com/" + key + "/";
+      });
+
+      // Add a class to the div
+      div.className = 'custom-div';
+
+      document.getElementById('res').appendChild(div);
+    });
+  }).catch(function (error) {
+    console.error(error);
+  });
+}, 100);
+</script>
+<script>
+  const intervalId = setInterval(removeCode,10);
+
+  function removeCode() {
+  
+    let currentURL = window.location.href;
+    let desiredString1 = 'https://lekhoniya.blogspot.com/2023/';
+    let desiredString2 = 'https://lekhoniya.blogspot.com/p/';
+
+    if (currentURL.includes(desiredString1) || currentURL.includes(desiredString2)) {
+   
+   document.getElementById("editableSpan").style.display='none';
+   
+    let runElement = document.getElementById("editableSpan");
+      if (runElement) {
+        runElement.style.display='none';}
+   let blog1Element = document.getElementById("Blog1");
+blog1Element.setAttribute('onclick', 'mainp()');
+
+
+   
+   
+    let titleElements = document.querySelectorAll('.post-title.entry-title');
+  let bodyElements = document.querySelectorAll('.post-body.entry-content');
+   
+let blogPagerElements = document.querySelectorAll('.blog-pager');
+blogPagerElements.forEach(function(element) {
+  element.remove();
+});
+
+let feedLinkElements = document.querySelectorAll('.post-feeds');
+feedLinkElements.forEach(function(element) {
+  element.remove();
+});
+
+
+  if (titleElements.length === 0 || bodyElements.length === 0) {
+    console.log("Elements not found.");
+    removeCode();
+    return;
+  }
+
+  titleElements.forEach(function(titleElement) {
+  
+  });
+
+  bodyElements.forEach(function(bodyElement) {
+ 
+  });
+
+      clearInterval(intervalId);
+    } else {
+      let mainElement = document.getElementById("main");
+      if (mainElement) {
+        mainElement.remove();
+        clearInterval(intervalId);
+      }
+    }
+  }
+</script>
+<script>
+document.addEventListener('keydown', function(event) {
+ if ( event.key === 'Enter' || event.keyCode === 13) {
+    const editableSpan = document.getElementById('editableSpan');
+    const spanContent = editableSpan.innerHTML;
+    const lcStart = spanContent.indexOf('@l');
+    const lcEnd = spanContent.indexOf('l/');
+    if (lcStart !== -1 && lcEnd !== -1 && lcStart < lcEnd) {
+      const codeToExecute = spanContent.substring(lcStart + 2, lcEnd);
+      const replacedCode = codeToExecute.replace(/`id`/g, 'document.getElementById(')
+        .replace(/`b`/g, 'document.body')
+        .replace(/`bgc`/g, '.style.backgroundColor')
+        .replace(/`x`/g, 'document.getElementById("editableSpan")')
+        .replace(/`hide`/g, '.style.display="none"')
+        .replace(/`code`/g, 'document.write(');
+
+      const finalCode = replacedCode.replace(/`/g, '');
+      eval(finalCode);
+    }
+  }
+});
+
+</script>
+<script>
+
+
+
+function webrun(x) {
+     document.getElementById('editableSpan').textContent += +'\n'+'webrun : '+x;
+    let mainlink = "https://api.codetabs.com/v1/proxy?quest=" + x;
+    fetch(mainlink)
+        .then(function (data) {
+            return data.text();
+        })
+        .then(function (html) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Done : '+x;
+            document.getElementById('editableSpan').innerHTML += html;
+     
+        });
+}
+
+function source(x) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Source : '+x;
+    let mainlink = "https://api.codetabs.com/v1/proxy?quest=" + x;
+    fetch(mainlink)
+        .then(function (data) {
+            return data.text();
+        })
+        .then(function (html) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Done : '+x;
+            document.getElementById('editableSpan').textContent += html;
+        });
+}
+
+function google(x) {
+     
+    let mainlink = "https://api.codetabs.com/v1/proxy?quest=https://www.google.com/search?q=" + x.replace(/ /g, '%2B');
+      document.getElementById('editableSpan').textContent += +'\n'+'Google : '+x;
+     fetch(mainlink)
+        .then(function (data) {
+            return data.text();
+        })
+        .then(function (html) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Done : '+x;
+            document.getElementById('editableSpan').innerHTML += html;
+        });
+}
+     
+     function find(x) {
+     
+    let mainlink = "https://api.codetabs.com/v1/proxy?quest=https://in.search.yahoo.com/search?q=" + x.replace(/ /g, '%2B');
+      console.log('Find : '+x);
+     fetch(mainlink)
+        .then(function (data) {
+            return data.text();
+        })
+        .then(function (html) {
+       console.log('Done : '+x);
+      console.log('Lekhoniya code @l - l/');
+     console.log('programmed by Subham Mandal');
+     
+     console.log('Lekhoniya');
+            document.getElementById('editableSpan').innerHTML += html;
+        });
+}
+
+
+function xframe(x) {
+    let mainlink = "https://api.codetabs.com/v1/proxy?quest=" + x;
+      document.getElementById('editableSpan').textContent += +'\n'+'Xframe : '+x;
+    fetch(mainlink)
+        .then(function (data) {
+            return data.text();
+        })
+        .then(function (html) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Done : '+x;
+            let xx = document.getElementById('editableSpan');
+            let iframe = document.createElement('iframe'); 
+            iframe.srcdoc = html;
+       
+          iframe.style.width = window.innerWidth*0.8 + 'px';
+          iframe.style.height = window.innerHeight*0.8 + 'px';
+     iframe.style.transform = 'translate(10%, 0%)';
+            xx.appendChild(iframe); 
+        });
+}
+
+// Define a global variable to store the iframe element
+let iframe;
+
+  function site(x) {
+      const editableSpan = document.getElementById('editableSpan');
+     console.log('Site : '+x);
+
+      let mainlink = 'https://api.codetabs.com/v1/proxy?quest=https://www.' + x + '.com';
+
+      fetch(mainlink)
+        .then(function (data) {
+          return data.text();
+        })
+        .then(function (html) {
+          console.log('Done : '+x);
+      console.log('Lekhoniya code @l - l/');
+     console.log('programmed by Subham Mandal');
+
+          let iframe = document.createElement('iframe');
+          iframe.id = 'site-' + Date.now();
+
+          // Set the iframe's attributes
+          iframe.srcdoc = html;
+       
+          iframe.style.width = window.innerWidth*0.8 + 'px';
+          iframe.style.height = window.innerHeight*0.8 + 'px';
+     iframe.style.transform = 'translate(10%, 0%)';
+
+          // Add the iframe to the document body
+          document.body.appendChild(iframe);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+
+
+
+
+
+function blog(x) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Blog : '+x;
+    let mainlink = "https://api.codetabs.com/v1/proxy?quest=https://" + x + '.blogspot.com/';
+    fetch(mainlink)
+        .then(function (data) {
+            return data.text();
+        })
+        .then(function (html) {
+      document.getElementById('editableSpan').textContent += +'\n'+'Done : '+x;
+            let xx = document.getElementById('editableSpan');
+            let iframe = document.createElement('iframe'); 
+            iframe.srcdoc = html;
+            
+          iframe.style.width = window.innerWidth*0.8 + 'px';
+          iframe.style.height = window.innerHeight*0.8 + 'px';
+     iframe.style.transform = 'translate(10%, 0%)';
+            xx.appendChild(iframe); 
+        });
+}
+
+
+
+
+function frame(x) {
+     
+      document.getElementById('editableSpan').textContent += +'\n'+'Frame : '+x;
+    let xx = document.getElementById('editableSpan');
+    let iframe = document.createElement('iframe');
+    iframe.src = x; // Provide a valid URL here
+   
+          iframe.style.width = window.innerWidth*0.8 + 'px';
+          iframe.style.height = window.innerHeight*0.8 + 'px';
+     iframe.style.transform = 'translate(10%, 0%)';
+    xx.appendChild(iframe); 
+}
+</script>
+<script>
+     if (document.referrer) {
+  console.log("From : " + document.referrer);
+} else {
+ 
+}
+
+     </script>
+<script>
+    const editableSpan = document.getElementById('editableSpan');
+    editableSpan.addEventListener('keydown', handleKeyDown);
+
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+            applyBoldToAsterisks();
+        }
+    }
+
+    function applyBoldToAsterisks() {
+        const text = editableSpan.innerHTML;
+        const regex = /\*\*(.*?)\*\*/g;
+        const newText = text.replace(regex, '<strong>$1</strong>');
+
+        // Only update the content if there was a match
+        if (newText !== text) {
+            editableSpan.innerHTML = newText;
+        }
+    }
+</script>
+<script>
+  var clearspace = 0; 
+
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Escape") { clearspace += 1; }
+  });
+
+  document.addEventListener("keyup", function(event) {
+    if (event.code === "Escape") {
+      if (clearspace > 50) {
+       const editableSpan = document.getElementById("editableSpan");
+                editableSpan.textContent = "";
+                alert("Lekhoniya : cleared!");
+      }
+      clearspace = 0; 
+    }
+  });
+</script>
+<script id="globalScript">
+var currentUrl_gtime = window.location.href.substring(0, 33);
+var urlToMatch = 'https://lekhoniya.blogspot.com/g/';
+if (currentUrl_gtime === urlToMatch) {
+      console.log('Connecting...');
+      firebase.database().ref('Lekhoniya-Global').on("value", function(snapshot) {
+    var firebaseValue = snapshot.val().user;
+    checkAndActivateScript(firebaseValue);
+});
+
+function checkAndActivateScript(firebaseValue) {
+    let localStorageValue = localStorage.getItem('lekhoniya-user');
+
+    if (firebaseValue === localStorageValue) {
+        
+       
+    } else {
+        firebase.database().ref('Lekhoniya-Global').on("value", function(snapshot) {
+            document.getElementById('editableSpan').innerHTML = snapshot.val().valx;
+         
+       
+        });
+    }
+}
+      
+     alert('Welcome to Global !');
+      console.log('Lekhoniya Global !');
+  let editableSpan = document.getElementById('editableSpan');
+
+  editableSpan.setAttribute('oninput', 'updateGlobal()');
+  
+  fetch('https://onerealtimeserver-default-rtdb.firebaseio.com/Lekhoniya-Global/valx.json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('editableSpan').innerHTML = data;
+    });
+}
+
+function updateGlobal() {
+      let timeg = new Date().toLocaleTimeString();
+  let user = localStorage.getItem('lekhoniya-user');
+  const valx = document.getElementById('editableSpan').innerHTML;
+  firebase.database().ref('Lekhoniya-Global').set({ valx, user , timeg });
+}
+</script>
+<script>
+var currentUrl_dtime = window.location.href.substring(0, 33);
+var durlToMatch = 'https://lekhoniya.blogspot.com/d/';
+
+if (currentUrl_dtime === durlToMatch) {
+  console.log('Realtime Drawing');
+  // Create an iframe element
+let iframe = document.createElement('iframe');
+
+// Set the source URL
+iframe.src = "https://onessssweb.blogspot.com/2023/11/drawplate.html";
+
+// Set the inline style
+iframe.style.position = "fixed";
+iframe.style.top = "0";
+iframe.style.left = "0";
+iframe.style.bottom = "0";
+iframe.style.right = "0";
+iframe.style.width = "100%";
+iframe.style.height = "100%";
+iframe.style.border = "none";
+iframe.style.margin = "0";
+iframe.style.padding = "0";
+iframe.style.overflow = "hidden";
+iframe.style.zIndex = "999999";
+
+// Append the iframe to the document body or another desired container
+document.body.appendChild(iframe);
+
+  document.getElementById('editableSpan').style.display = 'none';
+
+  const currentURL = window.location.href;
+  let ssx = 800;
+  let ssy = 800;
+  const match = currentURL.match(/\/d\/(\d+)-(\d+)\//);
+  
+  if (match) {
+    ssx = parseInt(match[1]);
+    ssy = parseInt(match[2]);
+    console.log("resolution: " + ssx + 'X' + ssy);
+  }
+}
+</script>
+
+
+
+
+
+
+
+</body>
+
